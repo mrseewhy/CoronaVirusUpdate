@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
-import Cards from './Cards';
 import axios from "axios"
-import Axios from 'axios';
 
 class Search extends Component {
 
-    state= {countries:[],
-    confirmed: 0,
-    recovered: 0,
-    deaths: 0,
-    date:"", 
-    time:"",
-    url:""
-            }  
+    state = {
+        countries: [],
+        country: ""
+      } 
+
+    getCountries = () => {
+        axios.get('https://covid19.mathdro.id/api/countries').then(res => this.setState({countries : res.data.countries}))
+
+    }
+    
+
+    getCountriesName = () => {
+    this.state.countries.map(country => <p>{country.name}</p>)
+    }
     
     componentDidMount(){
-        axios.get('https://covid19.mathdro.id/api/countries').then(res => this.setState({
-            country: res.data.countries
-        }))
+        this.getCountries()
+        console.log(this.state)
+        
     }
 
+    
     render() {
         return (
             <div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col s12">
-                                <select name="" id="">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                </select>
-                            </div>
+                        <div>
+                            {this.getCountriesName() }
                         </div>
-                    </div>
             </div>
         );
     }

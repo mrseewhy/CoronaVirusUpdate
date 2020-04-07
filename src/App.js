@@ -16,7 +16,8 @@ class App extends Component {
     deaths: 0,
     date:"", 
     time:"",
-    image: ""
+    image: "",
+    country: ""
   }
 
   getWorldUpdate = ()=>{
@@ -43,7 +44,7 @@ class App extends Component {
       <div>
         <Heading />
         <Route exact path="/" component={() => <Home confirmed= {this.state.confirmed} recovered={this.state.recovered } deaths = {this.state.deaths} date = {this.state.date} time = {this.state.time} image={this.state.image} />} />
-        <Route path="/search" component={Search} />
+        <Route path="/search" component={() => <Search getFormDetail={this.getFormDetail} />} />
       </div>
       </Router>
     );

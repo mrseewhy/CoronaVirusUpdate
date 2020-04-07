@@ -6,7 +6,7 @@ const Cards = ({confirmed, recovered, deaths, time, date, image}) => {
         <div>
             <main>
             <div style={{paddingTop:"30px"}} className="container">
-    <h5>Last Update Time: {date} - {time}</h5>
+    <h6 className="blue-grey white-text" style={{padding:"10px"}} >Last Update Time: {date} - {time}</h6>
             <div className="row">
                 <div className="col s12 m4 z-depth-5">
                   <div className="card blue darken-4">

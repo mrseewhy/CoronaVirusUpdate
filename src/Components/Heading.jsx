@@ -5,9 +5,9 @@ const Heading = () => {
     return (
         <div>
             <header style={{padding: "10px"}} className="pink darken-2 white-text">
-            <h5 className="center"> 
+            <p className="center"> 
             <NavLink to="/" className="white-text">Home</NavLink> |   
-            <NavLink className="white-text" to="/search"> Search By Country</NavLink></h5>
+            <NavLink className="white-text" to="/search"> Search By Country</NavLink></p>
             </header>
         </div>
     );
